@@ -1,0 +1,10 @@
+prefix=C:/Program Files (x86)/uv_webserver
+exec_prefix=${prefix}
+libdir=C:/Program Files (x86)/uv_webserver/lib
+includedir=C:/Program Files (x86)/uv_webserver/include
+
+Name: argparse
+Description: Command-line argument parsing library for C/C++
+Version: 0.1.0
+Libs: -L${libdir} -largparse
+Cflags: -I${includedir}
