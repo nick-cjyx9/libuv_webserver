@@ -2,6 +2,7 @@
 *.obj
 *.exe
 *.pdb
+*.a
 *.ilk
 /build*/
 /build*.ninja
