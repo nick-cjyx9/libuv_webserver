@@ -30,7 +30,6 @@ int _ret = 0;
 int parse_args(int argc, const char **argv, struct sockaddr_in *addr)
 {
   char *arg_bind = NULL;
-  char *arg_directory = NULL;
   // sentinel-terminated array, NULL as end marker is required by argparse_usage() to know when to stop iterating
   static const char *const usages[] = {"uvecho.exe [-h] [-b ADDRESS] [port]", NULL};
   struct argparse_option options[] = {
@@ -70,7 +69,7 @@ cleanup:
 
 void onClientClosed(uv_handle_t *handle)
 {
-    free(handle);
+  free(handle);
 }
 
 void onAlloc(uv_handle_t *handle, size_t suggested_size, uv_buf_t *buf)
@@ -82,7 +81,8 @@ void onAlloc(uv_handle_t *handle, size_t suggested_size, uv_buf_t *buf)
 
 void onWrite(uv_write_t *req, int status)
 {
-  if (status < 0) fprintf(stderr, "write error: %s\n", uv_strerror(status));
+  if (status < 0)
+    fprintf(stderr, "write error: %s\n", uv_strerror(status));
   // close once responsed
   uv_close((uv_handle_t *)req->handle, onClientClosed);
   free(req);

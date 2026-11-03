@@ -21,8 +21,6 @@
     }                                                                  \
   } while (0)
 
-int _ret = 0;
-
 int parse_args(int argc, const char **argv, struct sockaddr_in *addr, const char **directory)
 {
   char *arg_bind = NULL;
@@ -90,6 +88,7 @@ void check_directory(uv_loop_t *loop, const char *directory)
 
 int main(int argc, const char **argv)
 {
+  int _ret = 0;
   struct sockaddr_in addr = {0};
   const char *directory = NULL;
   char ip[64];

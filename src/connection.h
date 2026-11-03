@@ -1,6 +1,5 @@
 #ifndef CONNECTION_H
 #define CONNECTION_H
-#include <stddef.h>
 #include <uv.h>
 
 #include "fs.h"

@@ -1,6 +1,5 @@
 #ifndef FS_H
 #define FS_H
-#include <stddef.h>
 #include <uv.h>
 
 typedef struct fs_file fs_file_t;
